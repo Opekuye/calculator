@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+
+.container {
+
+border: 1px solid white;
+height: 350px;
+width: 295px;
+float: left;
+margin: 10px 10px 10px 170px;
+box-shadow: 8px 2px 43px 1px rgba(0,0,0,0.52);
+-webkit-box-shadow: 8px 2px 43px 1px rgba(0,0,0,0.52);
+-moz-box-shadow: 8px 2px 43px 1px rgba(0,0,0,0.52);
+}
+
+.box {
+margin-top: 50px;
+height: 260px;
+width: 300px;
+margin: 15px 10px 10px -0px;
+}
+
+#screen {
+border: 1px solid grey;
+height: 70px;
+font-size: 30px;
+margin: 10px 10px 10px 10px;
+width: 273px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+#b7, #b8, #b9, #b4, #b5, #b6, #b1, #b2, #b3, #b0, #bp, #bb, #badd, #bsub, #bmul, #bdiv, #bper, #bpow, #brot, #beq{
+float: left;
+height: 40px;
+width: 65px;
+border: 1px solid grey;
+}
+
+#b7 {margin: 20px 5px 0px 10px;}
+#b8 {margin: 20px 5px 0px 0px;}
+#b9 {margin: 20px 5px 0px 0px;}
+#badd {margin: 20px 5px 0px 0px;}
+
+#b4 {margin: 65px 0px 0px -210px;}
+#b5 {margin: 65px 0px 0px -140px;}
+#b6 {margin: 65px 0px 0px -70px;}
+#bsub {margin: 5px 0px 0px 220px;}
+
+#b1 {margin: 110px 0px 0px -210px;}
+#b2 {margin: 110px 0px 0px -140px;}
+#b3 {margin: 110px 0px 0px -70px;}
+#bmul {margin: 5px 0px 0px 220px;}
+
+#bp {margin: 155px 0px 0px -210px;}
+#b0 {margin: 155px 0px 0px -140px;}
+#bb {margin: 155px 0px 0px -70px;}
+#bdiv {margin: 5px 0px 0px 220px;}
+
+#bper {margin: 200px 0px 0px -210px;}
+#bpow {margin: 200px 0px 0px -140px;}
+#brot {margin: 200px 0px 0px -70px;}
+#beq {margin: -70px 0px 0px 220px;}
+
+</style>
+
+</head>
+
+<body>
+	
+
+	<div class="container">
+    
+    	<p id="screen" maxlength="18"><p>
+        
+        <div class="box">
+
+		<button type="button" id="b7" onclick="n7()"><b>7</b>				</button>
+        
+        <button type="button" id="b8" onclick="n8()"><b>8</b>				</button>
+        
+        <button type="button" id="b9" onclick="n9()"><b>9</b>				</button>
+        
+        <button type="button" id="b4" onclick="n4()"><b>4</b>				</button>
+        
+        <button type="button" id="b5" onclick="n5()"><b>5</b>				</button>
+        
+        <button type="button" id="b6" onclick="n6()"><b>6</b>				</button>
+        
+        <button type="button" id="b1" onclick="n1()"><b>1</b>				</button>
+        
+        <button type="button" id="b2" onclick="n2()"><b>2</b>				</button>
+        
+        <button type="button" id="b3" onclick="n3()"><b>3</b>				</button>
+        
+        <button type="button" id="b0" onclick="n0()"><b>0</b>				</button>
+        
+        <button type="button" id="bp" onclick="np()"><b>.</b>				</button>
+        
+        <button type="button" id="bb" onclick="del()"><b>DEL</b>				</button>
+        
+        <button type="button" id="bper" onclick="myFunction()"><b>%</b>				</button>
+        
+        <button type="button" id="bpow" onclick="myFunction()"><b>^</b>				</button>
+        
+        <button type="button" id="brot" onclick="myFunction()"><b>/^</b>				</button>
+        
+        
+        <button type="button" id="badd" onclick="plus()"><b>+</b>				</button>
+        
+        <button type="button" id="bsub" onclick="minus()"><b>-</b>				</button>
+        
+        <button type="button" id="bmul" onclick="times()"><b>x</b>				</button>
+        
+        <button type="button" id="bdiv" onclick="myFunction()"><b>/</b>				</button>
+        
+        </div>
+        
+        <button type="button" id="beq" onclick="equal()"><b>=</b>				</button>
+
+	</div>
+
+
+<script>
+
+var x = [document.getElementById("screen").innerHTML];
+
+var number = "";
+var previousnumber = "";
+var sign = "";
+
+function n7() {
+    if (number.length > 18) return;
+    var seven = "7";
+    number =  number + seven;
+document.getElementById("screen").innerHTML = number ;
+};
+
+function n8() {
+    if (number.length > 18) return;
+    var eight = "8";
+    number =  number + eight;
+document.getElementById("screen").innerHTML = number ;
+};
+
+function n9() {
+    if (number.length > 18) return;
+    var nine = "9";
+    number =  number + nine;
+document.getElementById("screen").innerHTML = number;
+};
+
+function n4() {
+    if (number.length > 18) return;
+    var four = "4";
+    number =  number + four;
+document.getElementById("screen").innerHTML = number;
+};
+
+function n5() {
+    if (number.length > 18) return;
+    var five = "5";
+    number =  number + five;
+document.getElementById("screen").innerHTML = number;
+};
+
+function n6() {
+    var six = "6";
+    if (number.length > 18) return;
+    number =  number + six;
+document.getElementById("screen").innerHTML = number;
+};
+
+function n1() {
+    if (number.length > 18) return;
+    var one = "1";
+    number =  number + one;
+document.getElementById("screen").innerHTML = number;
+};
+
+function n2() {
+    if (number.length > 18) return;
+    var two = "2";
+    number =  number + two;
+document.getElementById("screen").innerHTML = number;
+};
+
+function n3() {
+    if (number.length > 18) return;
+    var three = "3";
+    number =  number + three;
+document.getElementById("screen").innerHTML = number;
+};
+
+function n0() {
+    if (number.length > 18) return;
+    var zero = "0";
+    number =  number + zero;
+document.getElementById("screen").innerHTML = number;
+};
+
+function np() {
+    var dot = ".";
+    number =  number + dot;
+document.getElementById("screen").innerHTML = number;
+};
+
+function del() {
+    
+    number = "" ;
+document.getElementById("screen").innerHTML = number;
+};
+
+function plus() {
+sign = "plus";
+previousnumber = number;
+number = "";
+//document.getElementById("screen").innerHTML = number;
+};
+
+
+function minus() {
+sign = "minus";
+previousnumber = number;
+number = "";
+document.getElementById("screen").innerHTML = number;
+};
+
+function times() {
+sign = "times";
+previousnumber = number;
+number = "";
+document.getElementById("screen").innerHTML = number;
+};
+
+function equal() {
+    if (sign === "plus") {
+        var result = Number(previousnumber) + Number(number);
+        document.getElementById("screen").innerHTML = result;
+    }
+    else if (sign === "minus"){
+        var result = Number(previousnumber) - Number(number);
+        document.getElementById("screen").innerHTML = result;
+    }
+    else if (sign === "times"){
+        var result = Number(previousnumber) * Number(number);
+        document.getElementById("screen").innerHTML = result;
+    }
+
+}
+
+
+</script>
+
+</body>
+</html>
